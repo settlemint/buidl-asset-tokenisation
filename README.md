@@ -49,13 +49,29 @@ Asset Tokenisation Example powered by SettleMint
   }
 ```
 
-### BUIDL Session
-
-1. Deploy your Asset Tokenisation smart contract!
+5. Deploy your Asset Tokenisation smart contract! Please take down of your deployed smart contract address.
 
 ```bash
 pnpm run smartcontract:deploy
 ```
 
+### BUIDL Session
+
+1. In the SettleMint BPass Platform, click on your profile icon at the top right at click on `API keys`
+2. Generate your API key and note it down
+3. Head back to your application, click on `Blockchain nodes`, click on your deployed node and click on `Connect`
+4. Note down your `JSON-RPC` endpoint
+5. Now, click on `Integration tools` and deploy an `Integration Studio` tool.
+6. Click on your deployed `Integration Studio`, click on `Interface` and click `view in fullscreen mode`
+7. At the top right dropdown box, click on `Import` and import the `flows.json` found in the `Integration-Studio` directory
+8. Once imported, click on the `Blockchain APIs` tab and double click on the `Set Global Variables` module
+9. Go to the `On Message` tab and edit your noted down variables and click `Done`
+
+```javascript
+    key: 'bpass-...',
+    rpcEndpoint: 'https://...',
+    contract: '0x...',
+```
+
+10. Now, click on `Deploy`
 ---
-# buidl-asset-tokenisation
