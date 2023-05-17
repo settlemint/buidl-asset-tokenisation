@@ -1,32 +1,22 @@
 [
     {
-        "id": "384ba1bdcd9aad55",
+        "id": "a781da6f697711d2",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Asset Tokenisation",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "3fbb662928a42584",
-        "type": "tab",
-        "label": "Blockchain APIs",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "f6f5b645d7e7700d",
+        "id": "0231410d77b80776",
         "type": "inject",
-        "z": "3fbb662928a42584",
+        "z": "a781da6f697711d2",
         "name": "",
         "props": [
             {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
+                "p": "timestamp",
+                "v": "",
+                "vt": "date"
             }
         ],
         "repeat": "",
@@ -34,22 +24,20 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
+        "x": 210,
         "y": 80,
         "wires": [
             [
-                "1d808424fc4e2e9c"
+                "8154b1dd0912e484"
             ]
         ]
     },
     {
-        "id": "1d808424fc4e2e9c",
+        "id": "8154b1dd0912e484",
         "type": "function",
-        "z": "3fbb662928a42584",
+        "z": "a781da6f697711d2",
         "name": "Set Global Variables",
-        "func": "const glbVar = {\n    key: '',\n    rpcEndpoint: '',\n    contract: '',\n    abi: [\n        {\n            \"anonymous\": false,\n            \"inputs\": [\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"address\",\n                    \"name\": \"previousAdmin\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"address\",\n                    \"name\": \"newAdmin\",\n                    \"type\": \"address\"\n                }\n            ],\n            \"name\": \"AdminChanged\",\n            \"type\": \"event\"\n        },\n        {\n            \"anonymous\": false,\n            \"inputs\": [\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"address\",\n                    \"name\": \"account\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"address\",\n                    \"name\": \"operator\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"bool\",\n                    \"name\": \"approved\",\n                    \"type\": \"bool\"\n                }\n            ],\n            \"name\": \"ApprovalForAll\",\n            \"type\": \"event\"\n        },\n        {\n            \"anonymous\": false,\n            \"inputs\": [\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"address\",\n                    \"name\": \"operator\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"address\",\n                    \"name\": \"from\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"address\",\n                    \"name\": \"to\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"uint256[]\",\n                    \"name\": \"assetIds\",\n                    \"type\": \"uint256[]\"\n                },\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"uint256[]\",\n                    \"name\": \"amounts\",\n                    \"type\": \"uint256[]\"\n                },\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"bytes\",\n                    \"name\": \"data\",\n                    \"type\": \"bytes\"\n                }\n            ],\n            \"name\": \"AssetTransferEvent\",\n            \"type\": \"event\"\n        },\n        {\n            \"anonymous\": false,\n            \"inputs\": [\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"address\",\n                    \"name\": \"beacon\",\n                    \"type\": \"address\"\n                }\n            ],\n            \"name\": \"BeaconUpgraded\",\n            \"type\": \"event\"\n        },\n        {\n            \"anonymous\": false,\n            \"inputs\": [\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"uint8\",\n                    \"name\": \"version\",\n                    \"type\": \"uint8\"\n                }\n            ],\n            \"name\": \"Initialized\",\n            \"type\": \"event\"\n        },\n        {\n            \"anonymous\": false,\n            \"inputs\": [\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"address\",\n                    \"name\": \"previousOwner\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"address\",\n                    \"name\": \"newOwner\",\n                    \"type\": \"address\"\n                }\n            ],\n            \"name\": \"OwnershipTransferred\",\n            \"type\": \"event\"\n        },\n        {\n            \"anonymous\": false,\n            \"inputs\": [\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"address\",\n                    \"name\": \"operator\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"address\",\n                    \"name\": \"from\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"address\",\n                    \"name\": \"to\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"uint256[]\",\n                    \"name\": \"ids\",\n                    \"type\": \"uint256[]\"\n                },\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"uint256[]\",\n                    \"name\": \"values\",\n                    \"type\": \"uint256[]\"\n                }\n            ],\n            \"name\": \"TransferBatch\",\n            \"type\": \"event\"\n        },\n        {\n            \"anonymous\": false,\n            \"inputs\": [\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"address\",\n                    \"name\": \"operator\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"address\",\n                    \"name\": \"from\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"address\",\n                    \"name\": \"to\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"uint256\",\n                    \"name\": \"id\",\n                    \"type\": \"uint256\"\n                },\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"uint256\",\n                    \"name\": \"value\",\n                    \"type\": \"uint256\"\n                }\n            ],\n            \"name\": \"TransferSingle\",\n            \"type\": \"event\"\n        },\n        {\n            \"anonymous\": false,\n            \"inputs\": [\n                {\n                    \"indexed\": false,\n                    \"internalType\": \"string\",\n                    \"name\": \"value\",\n                    \"type\": \"string\"\n                },\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"uint256\",\n                    \"name\": \"id\",\n                    \"type\": \"uint256\"\n                }\n            ],\n            \"name\": \"URI\",\n            \"type\": \"event\"\n        },\n        {\n            \"anonymous\": false,\n            \"inputs\": [\n                {\n                    \"indexed\": true,\n                    \"internalType\": \"address\",\n                    \"name\": \"implementation\",\n                    \"type\": \"address\"\n                }\n            ],\n            \"name\": \"Upgraded\",\n            \"type\": \"event\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"\",\n                    \"type\": \"uint256\"\n                }\n            ],\n            \"name\": \"assetToDetails\",\n            \"outputs\": [\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"assetId\",\n                    \"type\": \"uint256\"\n                },\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"maxSupply\",\n                    \"type\": \"uint256\"\n                },\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"faceValue\",\n                    \"type\": \"uint256\"\n                },\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"maturityTimestamp\",\n                    \"type\": \"uint256\"\n                }\n            ],\n            \"stateMutability\": \"view\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"account\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"id\",\n                    \"type\": \"uint256\"\n                }\n            ],\n            \"name\": \"balanceOf\",\n            \"outputs\": [\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"\",\n                    \"type\": \"uint256\"\n                }\n            ],\n            \"stateMutability\": \"view\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"address[]\",\n                    \"name\": \"accounts\",\n                    \"type\": \"address[]\"\n                },\n                {\n                    \"internalType\": \"uint256[]\",\n                    \"name\": \"ids\",\n                    \"type\": \"uint256[]\"\n                }\n            ],\n            \"name\": \"balanceOfBatch\",\n            \"outputs\": [\n                {\n                    \"internalType\": \"uint256[]\",\n                    \"name\": \"\",\n                    \"type\": \"uint256[]\"\n                }\n            ],\n            \"stateMutability\": \"view\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"assetId\",\n                    \"type\": \"uint256\"\n                },\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"amounts\",\n                    \"type\": \"uint256\"\n                }\n            ],\n            \"name\": \"burn\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"uint256[]\",\n                    \"name\": \"assetId\",\n                    \"type\": \"uint256[]\"\n                },\n                {\n                    \"internalType\": \"uint256[]\",\n                    \"name\": \"amounts\",\n                    \"type\": \"uint256[]\"\n                }\n            ],\n            \"name\": \"burnBatch\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"assetId\",\n                    \"type\": \"uint256\"\n                },\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"maxSupply\",\n                    \"type\": \"uint256\"\n                },\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"faceValue\",\n                    \"type\": \"uint256\"\n                },\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"maturityTimestamp\",\n                    \"type\": \"uint256\"\n                }\n            ],\n            \"name\": \"createAsset\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"id\",\n                    \"type\": \"uint256\"\n                }\n            ],\n            \"name\": \"exists\",\n            \"outputs\": [\n                {\n                    \"internalType\": \"bool\",\n                    \"name\": \"\",\n                    \"type\": \"bool\"\n                }\n            ],\n            \"stateMutability\": \"view\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"string\",\n                    \"name\": \"name_\",\n                    \"type\": \"string\"\n                },\n                {\n                    \"internalType\": \"string\",\n                    \"name\": \"symbol_\",\n                    \"type\": \"string\"\n                },\n                {\n                    \"internalType\": \"string\",\n                    \"name\": \"uri_\",\n                    \"type\": \"string\"\n                }\n            ],\n            \"name\": \"initialize\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"account\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"operator\",\n                    \"type\": \"address\"\n                }\n            ],\n            \"name\": \"isApprovedForAll\",\n            \"outputs\": [\n                {\n                    \"internalType\": \"bool\",\n                    \"name\": \"\",\n                    \"type\": \"bool\"\n                }\n            ],\n            \"stateMutability\": \"view\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"assetId\",\n                    \"type\": \"uint256\"\n                },\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"amounts\",\n                    \"type\": \"uint256\"\n                },\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"recipient\",\n                    \"type\": \"address\"\n                }\n            ],\n            \"name\": \"mint\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"uint256[]\",\n                    \"name\": \"assetId\",\n                    \"type\": \"uint256[]\"\n                },\n                {\n                    \"internalType\": \"uint256[]\",\n                    \"name\": \"amounts\",\n                    \"type\": \"uint256[]\"\n                },\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"recipient\",\n                    \"type\": \"address\"\n                }\n            ],\n            \"name\": \"mintBatch\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [],\n            \"name\": \"name\",\n            \"outputs\": [\n                {\n                    \"internalType\": \"string\",\n                    \"name\": \"\",\n                    \"type\": \"string\"\n                }\n            ],\n            \"stateMutability\": \"view\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [],\n            \"name\": \"owner\",\n            \"outputs\": [\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"\",\n                    \"type\": \"address\"\n                }\n            ],\n            \"stateMutability\": \"view\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [],\n            \"name\": \"proxiableUUID\",\n            \"outputs\": [\n                {\n                    \"internalType\": \"bytes32\",\n                    \"name\": \"\",\n                    \"type\": \"bytes32\"\n                }\n            ],\n            \"stateMutability\": \"view\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [],\n            \"name\": \"renounceOwnership\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"from\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"to\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"internalType\": \"uint256[]\",\n                    \"name\": \"ids\",\n                    \"type\": \"uint256[]\"\n                },\n                {\n                    \"internalType\": \"uint256[]\",\n                    \"name\": \"amounts\",\n                    \"type\": \"uint256[]\"\n                },\n                {\n                    \"internalType\": \"bytes\",\n                    \"name\": \"data\",\n                    \"type\": \"bytes\"\n                }\n            ],\n            \"name\": \"safeBatchTransferFrom\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"from\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"to\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"id\",\n                    \"type\": \"uint256\"\n                },\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"amount\",\n                    \"type\": \"uint256\"\n                },\n                {\n                    \"internalType\": \"bytes\",\n                    \"name\": \"data\",\n                    \"type\": \"bytes\"\n                }\n            ],\n            \"name\": \"safeTransferFrom\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"operator\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"internalType\": \"bool\",\n                    \"name\": \"approved\",\n                    \"type\": \"bool\"\n                }\n            ],\n            \"name\": \"setApprovalForAll\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"string\",\n                    \"name\": \"newuri\",\n                    \"type\": \"string\"\n                }\n            ],\n            \"name\": \"setURI\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"bytes4\",\n                    \"name\": \"interfaceId\",\n                    \"type\": \"bytes4\"\n                }\n            ],\n            \"name\": \"supportsInterface\",\n            \"outputs\": [\n                {\n                    \"internalType\": \"bool\",\n                    \"name\": \"\",\n                    \"type\": \"bool\"\n                }\n            ],\n            \"stateMutability\": \"view\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [],\n            \"name\": \"symbol\",\n            \"outputs\": [\n                {\n                    \"internalType\": \"string\",\n                    \"name\": \"\",\n                    \"type\": \"string\"\n                }\n            ],\n            \"stateMutability\": \"view\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"id\",\n                    \"type\": \"uint256\"\n                }\n            ],\n            \"name\": \"totalSupply\",\n            \"outputs\": [\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"\",\n                    \"type\": \"uint256\"\n                }\n            ],\n            \"stateMutability\": \"view\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"newOwner\",\n                    \"type\": \"address\"\n                }\n            ],\n            \"name\": \"transferOwnership\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"newImplementation\",\n                    \"type\": \"address\"\n                }\n            ],\n            \"name\": \"upgradeTo\",\n            \"outputs\": [],\n            \"stateMutability\": \"nonpayable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"address\",\n                    \"name\": \"newImplementation\",\n                    \"type\": \"address\"\n                },\n                {\n                    \"internalType\": \"bytes\",\n                    \"name\": \"data\",\n                    \"type\": \"bytes\"\n                }\n            ],\n            \"name\": \"upgradeToAndCall\",\n            \"outputs\": [],\n            \"stateMutability\": \"payable\",\n            \"type\": \"function\"\n        },\n        {\n            \"inputs\": [\n                {\n                    \"internalType\": \"uint256\",\n                    \"name\": \"id\",\n                    \"type\": \"uint256\"\n                }\n            ],\n            \"name\": \"uri\",\n            \"outputs\": [\n                {\n                    \"internalType\": \"string\",\n                    \"name\": \"\",\n                    \"type\": \"string\"\n                }\n            ],\n            \"stateMutability\": \"view\",\n            \"type\": \"function\"\n        }\n    ]\n\n\n\n}\n\nglobal.set('key',glbVar.key);\nglobal.set('abi',glbVar.abi);\nglobal.set('pvtkey',glbVar.pvtkey);\nglobal.set('rpcEndpoint', glbVar.rpcEndpoint);\nglobal.set('contract',glbVar.contract)\n\nreturn msg;",
+        "func": "const glbVar = {\n    privateKey: '',\n    contract: '',\n    bpassKey: '',\n    rpcEndpoint: '',\n    abi: []\n}\n\nglobal.set('privateKey', glbVar.privateKey);\nglobal.set('contract', glbVar.contract);\nglobal.set('bpassKey', glbVar.bpassKey);\nglobal.set('rpcEndpoint', glbVar.rpcEndpoint);\nglobal.set('abi',glbVar.abi)\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -59,829 +47,85 @@
         "y": 80,
         "wires": [
             [
-                "7deaa52364f1018d"
+                "a7c63a0fd0d1a779"
             ]
         ]
     },
     {
-        "id": "666d14cfd05ff50f",
-        "type": "inject",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 280,
-        "wires": [
-            [
-                "400197ab27c83204"
-            ]
-        ]
-    },
-    {
-        "id": "400197ab27c83204",
-        "type": "function",
-        "z": "3fbb662928a42584",
-        "name": "Mint",
-        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst apiKey = global.get('key');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst from = msg.req.body.pvtkey;\nconst address = global.get('contract');\nconst abi = global.get('abi')\n\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.JsonRpcProvider(`${rpcEndpoint}/${apiKey}`);\nconst signer = new ethers.Wallet(from, provider)\nconst contract = new ethers.Contract(address, abi, signer);\n\nconst tx = await contract.mint(msg.req.body.assetId, msg.req.body.amount, msg.req.body.recipient);\n\nmsg.payload = { hash: tx.hash }\n\n\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "ethers",
-                "module": "ethers"
-            }
-        ],
-        "x": 410,
-        "y": 280,
-        "wires": [
-            [
-                "e60d07e24f5216ca",
-                "b883e1a483312869"
-            ]
-        ]
-    },
-    {
-        "id": "e60d07e24f5216ca",
+        "id": "a7c63a0fd0d1a779",
         "type": "debug",
-        "z": "3fbb662928a42584",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 680,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "377261727ae39e89",
-        "type": "function",
-        "z": "3fbb662928a42584",
-        "name": "CreateAsset",
-        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst apiKey = global.get('key');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst from = msg.req.body.pvtkey;\nconst address = global.get('contract');\nconst abi = global.get('abi')\n\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.JsonRpcProvider(`${rpcEndpoint}/${apiKey}`);\nconst signer = new ethers.Wallet(from, provider)\nconst contract = new ethers.Contract(address, abi, signer);\n\n\n const tx = await contract.CreateAsset(msg.req.body.assetId,msg.req.body.totalSupply,msg.req.body.faceValue, msg.req.body.maturityStamp);\n\n\n msg.payload = { hash: tx.hash};\n\n\n\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "ethers",
-                "module": "ethers"
-            }
-        ],
-        "x": 440,
-        "y": 180,
-        "wires": [
-            [
-                "33696158e1ff2e85",
-                "c9b622b54e7fedaf"
-            ]
-        ]
-    },
-    {
-        "id": "e45a46bcb3cbfe77",
-        "type": "inject",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "props": [
-            {
-                "p": "req.body.totalSupply",
-                "v": "\"1000\"",
-                "vt": "str"
-            },
-            {
-                "p": "req.body.pvtkey",
-                "v": "\"0xd112a68b58e9cc821600789f2c07e04d1e8006b827da94a4ae4097765ccab9e6\"",
-                "vt": "str"
-            },
-            {
-                "p": "req.body.assetId",
-                "v": "\"4632\"",
-                "vt": "str"
-            },
-            {
-                "p": "req.body.faceValue",
-                "v": "10",
-                "vt": "str"
-            },
-            {
-                "p": "req.body.maturityStamp",
-                "v": "64065557711",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 170,
-        "y": 180,
-        "wires": [
-            [
-                "377261727ae39e89"
-            ]
-        ]
-    },
-    {
-        "id": "8fa39f89665c8187",
-        "type": "debug",
-        "z": "3fbb662928a42584",
-        "name": "debug 5",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 680,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "19be36894000ab1c",
-        "type": "function",
-        "z": "3fbb662928a42584",
-        "name": "MintBatch",
-        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst apiKey = global.get('key');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst from = msg.req.body.pvtkey;\nconst address = global.get('contract');\nconst abi = global.get('abi')\n\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.JsonRpcProvider(`${rpcEndpoint}/${apiKey}`);\nconst signer = new ethers.Wallet(from, provider)\nconst contract = new ethers.Contract(address, abi, signer);\n\nconst tx = await contract.mintBatch(msg.req.body.assetIds, msg.req.body.amounts, msg.req.body.recipient);\n\n\n\nmsg.payload =  {hash: tx.hash}\n\n\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "ethers",
-                "module": "ethers"
-            }
-        ],
-        "x": 430,
-        "y": 360,
-        "wires": [
-            [
-                "8fa39f89665c8187",
-                "190d6b429863f146"
-            ]
-        ]
-    },
-    {
-        "id": "1bd1a0e0ea5fa31f",
-        "type": "inject",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 360,
-        "wires": [
-            [
-                "19be36894000ab1c"
-            ]
-        ]
-    },
-    {
-        "id": "8d6de63b2af88b6e",
-        "type": "debug",
-        "z": "3fbb662928a42584",
-        "name": "debug 6",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 680,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "8ae2c70a40ead618",
-        "type": "function",
-        "z": "3fbb662928a42584",
-        "name": "SafeBatchTransferFrom",
-        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst apiKey = global.get('key');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst from = msg.req.body.pvtkey;\nconst address = global.get('contract');\nconst abi = global.get('abi')\n\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.JsonRpcProvider(`${rpcEndpoint}/${apiKey}`);\nconst signer = new ethers.Wallet(from, provider)\nconst contract = new ethers.Contract(address, abi, signer);\n\n\nconst tx = await contract.safeBatchTransferFrom(msg.req.body.sender, msg.req.body.reciever,msg.req.body.assetIds, msg.req.body.amounts,'0x00');\n\n\n\nmsg.payload =  {hash :tx.hash}\n\n\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "ethers",
-                "module": "ethers"
-            }
-        ],
-        "x": 440,
-        "y": 440,
-        "wires": [
-            [
-                "8d6de63b2af88b6e",
-                "9b53a66e723be435"
-            ]
-        ]
-    },
-    {
-        "id": "47db7b98bce1970b",
-        "type": "inject",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 440,
-        "wires": [
-            [
-                "8ae2c70a40ead618"
-            ]
-        ]
-    },
-    {
-        "id": "591a3f419b36ddc4",
-        "type": "debug",
-        "z": "3fbb662928a42584",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 680,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "4ee8eac1d297c33c",
-        "type": "function",
-        "z": "3fbb662928a42584",
-        "name": "SafeTransferFrom",
-        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst apiKey = global.get('key');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst from = msg.req.body.pvtkey;\nconst address = global.get('contract');\nconst abi = global.get('abi')\n\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.JsonRpcProvider(`${rpcEndpoint}/${apiKey}`);\nconst signer = new ethers.Wallet(from, provider)\nconst contract = new ethers.Contract(address, abi, signer);\n\n\nconst tx = await contract.safeTransferFrom(msg.req.body.sender, msg.req.body.reciever,msg.req.body.assetId,msg.req.body.amount, '0x00');\n\n\n\nmsg.payload =  {hash: tx.hash}\n\n\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "ethers",
-                "module": "ethers"
-            }
-        ],
-        "x": 440,
-        "y": 520,
-        "wires": [
-            [
-                "591a3f419b36ddc4",
-                "619e36fb86e13ab0"
-            ]
-        ]
-    },
-    {
-        "id": "ea74511d2052c53f",
-        "type": "inject",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 520,
-        "wires": [
-            [
-                "4ee8eac1d297c33c"
-            ]
-        ]
-    },
-    {
-        "id": "e22cd4b1e613b75a",
-        "type": "debug",
-        "z": "3fbb662928a42584",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 660,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "0ef024f97da95ae3",
-        "type": "function",
-        "z": "3fbb662928a42584",
-        "name": "SetApprovalForAll",
-        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst apiKey = global.get('key');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst from = msg.req.body.pvtkey;\nconst address = global.get('contract');\nconst abi = global.get('abi')\n\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.JsonRpcProvider(`${rpcEndpoint}/${apiKey}`);\nconst signer = new ethers.Wallet(from, provider)\nconst contract = new ethers.Contract(address, abi, signer);\n\n\nconst tx = await contract.setApprovalForAll(msg.req.body.opreator,msg.req.body.response);\n\n\n\nmsg.payload =  {hash: tx.hash}\n\n\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "ethers",
-                "module": "ethers"
-            }
-        ],
-        "x": 430,
-        "y": 600,
-        "wires": [
-            [
-                "e22cd4b1e613b75a",
-                "cb5b44d05ad5f0a1"
-            ]
-        ]
-    },
-    {
-        "id": "db01cb70b1386fb5",
-        "type": "inject",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 600,
-        "wires": [
-            [
-                "0ef024f97da95ae3"
-            ]
-        ]
-    },
-    {
-        "id": "0c017d76882d84c3",
-        "type": "debug",
-        "z": "3fbb662928a42584",
-        "name": "debug 9",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 660,
-        "y": 680,
-        "wires": []
-    },
-    {
-        "id": "004856d7e1681113",
-        "type": "function",
-        "z": "3fbb662928a42584",
-        "name": "transferOwnership",
-        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst apiKey = global.get('key');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst from = msg.req.body.pvtkey;\nconst address = global.get('contract');\nconst abi = global.get('abi')\n\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.JsonRpcProvider(`${rpcEndpoint}/${apiKey}`);\nconst signer = new ethers.Wallet(from, provider)\nconst contract = new ethers.Contract(address, abi, signer);\n\n\nconst tx = await contract.transferOwnership(msg.req.body.owner);\n\n\n\nmsg.payload =  {hash : tx.hash}\n\n\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "ethers",
-                "module": "ethers"
-            }
-        ],
-        "x": 420,
-        "y": 680,
-        "wires": [
-            [
-                "0c017d76882d84c3",
-                "959ed385870bc6fd"
-            ]
-        ]
-    },
-    {
-        "id": "4d452e03d5897399",
-        "type": "inject",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "props": [
-            {
-                "p": "req.body.owner",
-                "v": "0x6527cD921B2D3b844737669981A8E6c505c21962",
-                "vt": "str"
-            },
-            {
-                "p": "req.body.pvtkey",
-                "v": "0x3b6782dc0a644b02b4c930c9f3e2bd8fcd1c446e9bff67544dcd14e3262d11d2",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 170,
-        "y": 680,
-        "wires": [
-            [
-                "004856d7e1681113"
-            ]
-        ]
-    },
-    {
-        "id": "23a5cd02469409d7",
-        "type": "debug",
-        "z": "3fbb662928a42584",
-        "name": "debug 10",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 680,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "6737c3d086ddaa43",
-        "type": "function",
-        "z": "3fbb662928a42584",
-        "name": "SetURI",
-        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst apiKey = global.get('key');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst from = global.get('pvtkey');\nconst address = global.get('contract');\nconst abi = global.get('abi')\n\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.providers.JsonRpcProvider(`${rpcEndpoint}/${apiKey}`);\nconst signer = new ethers.Wallet(from, provider)\nconst contract = new ethers.Contract(address, abi, signer);\n\n\nconst tx = await contract.setURI('');\n\n\n\nmsg.payload =  {tx}\n\n\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "ethers",
-                "module": "ethers"
-            }
-        ],
-        "x": 410,
-        "y": 780,
-        "wires": [
-            [
-                "23a5cd02469409d7"
-            ]
-        ]
-    },
-    {
-        "id": "7329037cab5e03a0",
-        "type": "inject",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 780,
-        "wires": [
-            [
-                "6737c3d086ddaa43"
-            ]
-        ]
-    },
-    {
-        "id": "714f0c859b61767b",
-        "type": "http in",
-        "z": "3fbb662928a42584",
-        "name": "Create Asset",
-        "url": "/asset",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 190,
-        "y": 140,
-        "wires": [
-            [
-                "377261727ae39e89"
-            ]
-        ]
-    },
-    {
-        "id": "00084643a45b24a1",
-        "type": "http in",
-        "z": "3fbb662928a42584",
-        "name": "Mint",
-        "url": "/mint",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 210,
-        "y": 240,
-        "wires": [
-            [
-                "400197ab27c83204"
-            ]
-        ]
-    },
-    {
-        "id": "b883e1a483312869",
-        "type": "http response",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 670,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "e027662cfd5a4c5c",
-        "type": "http in",
-        "z": "3fbb662928a42584",
-        "name": "Transfer Owner",
-        "url": "/owner",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 180,
-        "y": 640,
-        "wires": [
-            [
-                "004856d7e1681113"
-            ]
-        ]
-    },
-    {
-        "id": "959ed385870bc6fd",
-        "type": "http response",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 650,
-        "y": 640,
-        "wires": []
-    },
-    {
-        "id": "a0f5b4e57a2b8bf1",
-        "type": "http in",
-        "z": "3fbb662928a42584",
-        "name": "SetApproval",
-        "url": "/approval",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 190,
-        "y": 560,
-        "wires": [
-            [
-                "0ef024f97da95ae3"
-            ]
-        ]
-    },
-    {
-        "id": "cb5b44d05ad5f0a1",
-        "type": "http response",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 650,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "3c62f1309c0bcc0e",
-        "type": "http in",
-        "z": "3fbb662928a42584",
-        "name": "Transfer",
-        "url": "/transfer",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 200,
-        "y": 480,
-        "wires": [
-            [
-                "4ee8eac1d297c33c"
-            ]
-        ]
-    },
-    {
-        "id": "619e36fb86e13ab0",
-        "type": "http response",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 670,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "6bc59f030397155d",
-        "type": "http in",
-        "z": "3fbb662928a42584",
-        "name": "Mint Batch",
-        "url": "/mintbatch",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 190,
-        "y": 320,
-        "wires": [
-            [
-                "19be36894000ab1c"
-            ]
-        ]
-    },
-    {
-        "id": "190d6b429863f146",
-        "type": "http response",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 670,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "bb72ee578618f2e4",
-        "type": "http in",
-        "z": "3fbb662928a42584",
-        "name": "Batch Transfer",
-        "url": "/batchtransfer",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 180,
-        "y": 400,
-        "wires": [
-            [
-                "8ae2c70a40ead618"
-            ]
-        ]
-    },
-    {
-        "id": "9b53a66e723be435",
-        "type": "http response",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 670,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "7deaa52364f1018d",
-        "type": "debug",
-        "z": "3fbb662928a42584",
+        "z": "a781da6f697711d2",
         "name": "debug 1",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "abi",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 680,
+        "x": 760,
         "y": 80,
         "wires": []
     },
     {
-        "id": "33696158e1ff2e85",
-        "type": "debug",
-        "z": "3fbb662928a42584",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 680,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "c9b622b54e7fedaf",
-        "type": "http response",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "statusCode": "200",
-        "headers": {},
-        "x": 690,
+        "id": "a3bf422b89eaf40e",
+        "type": "http in",
+        "z": "a781da6f697711d2",
+        "name": "Initialise Asset",
+        "url": "/initialise",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
         "y": 140,
-        "wires": []
+        "wires": [
+            [
+                "a9c266c0127bcb1a"
+            ]
+        ]
     },
     {
-        "id": "97e25331f1fa9300",
-        "type": "debug",
-        "z": "3fbb662928a42584",
-        "name": "debug 11",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 680,
-        "y": 880,
-        "wires": []
+        "id": "7b77a930a3755dfb",
+        "type": "inject",
+        "z": "a781da6f697711d2",
+        "name": "",
+        "props": [
+            {
+                "p": "assetName",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "p": "assetSymbol",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "p": "assetUri",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 200,
+        "wires": [
+            [
+                "a9c266c0127bcb1a"
+            ]
+        ]
     },
     {
-        "id": "a629004290bcbdfe",
+        "id": "a9c266c0127bcb1a",
         "type": "function",
-        "z": "3fbb662928a42584",
-        "name": "burn token",
-        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst apiKey = global.get('key');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst from = msg.req.body.pvtkey;\nconst address = global.get('contract');\nconst abi = global.get('abi')\n\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.JsonRpcProvider(`${rpcEndpoint}/${apiKey}`);\nconst signer = new ethers.Wallet(from, provider)\nconst contract = new ethers.Contract(address, abi, signer);\n\n\nconst tx = await contract.burn(msg.req.body.assetId, msg.req.body.amount);\n\n\n\nmsg.payload =  {hash : tx.hash}\n\n\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
+        "z": "a781da6f697711d2",
+        "name": "Initialise Asset",
+        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst bpassKey = global.get('bpassKey');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst privateKey = global.get('privateKey');\nconst contractAddress = global.get('contract');\nconst abi = global.get('abi')\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.providers.JsonRpcProvider(`${rpcEndpoint}/${bpassKey}`);\nconst signer = new ethers.Wallet(privateKey, provider)\nconst contract = new ethers.Contract(contractAddress, abi, signer);\n\nconst tx = await contract.initialize(msg.assetName,msg.assetSymbol,msg.assetUri);\n\nmsg.tx = tx;\nmsg.payload = { hash: tx.hash};\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -892,34 +136,279 @@
                 "module": "ethers"
             }
         ],
-        "x": 410,
-        "y": 880,
+        "x": 440,
+        "y": 200,
         "wires": [
             [
-                "97e25331f1fa9300",
-                "f986dd3186139a0a"
+                "fccc870e4d37747a",
+                "e6ac0147c62409c5"
             ]
         ]
     },
     {
-        "id": "412b9b188f77ce9f",
+        "id": "fccc870e4d37747a",
+        "type": "debug",
+        "z": "a781da6f697711d2",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "e6ac0147c62409c5",
+        "type": "http response",
+        "z": "a781da6f697711d2",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 770,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5d247bc6cf6cbe71",
+        "type": "http in",
+        "z": "a781da6f697711d2",
+        "name": "Create Asset",
+        "url": "/createAsset",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 380,
+        "wires": [
+            [
+                "d2b66c8a9936d187"
+            ]
+        ]
+    },
+    {
+        "id": "34a89b0416bc6b81",
         "type": "inject",
-        "z": "3fbb662928a42584",
+        "z": "a781da6f697711d2",
         "name": "",
         "props": [
             {
-                "p": "req.body.assetId",
-                "v": "2108",
-                "vt": "str"
+                "p": "assetId",
+                "v": "",
+                "vt": "num"
             },
             {
-                "p": "req.body.amount",
-                "v": "100",
-                "vt": "str"
+                "p": "maxSupply",
+                "v": "",
+                "vt": "num"
             },
             {
-                "p": "req.body.pvtkey",
-                "v": "0xd112a68b58e9cc821600789f2c07e04d1e8006b827da94a4ae4097765ccab9e6",
+                "p": "faceValue",
+                "v": "",
+                "vt": "num"
+            },
+            {
+                "p": "maturityTimestamp",
+                "v": "",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 440,
+        "wires": [
+            [
+                "d2b66c8a9936d187"
+            ]
+        ]
+    },
+    {
+        "id": "d2b66c8a9936d187",
+        "type": "function",
+        "z": "a781da6f697711d2",
+        "name": "Create Asset",
+        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst bpassKey = global.get('bpassKey');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst privateKey = global.get('privateKey');\nconst contractAddress = global.get('contract');\nconst abi = global.get('abi')\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.providers.JsonRpcProvider(`${rpcEndpoint}/${bpassKey}`);\nconst signer = new ethers.Wallet(privateKey, provider)\nconst contract = new ethers.Contract(contractAddress, abi, signer);\n\nconst tx = await contract.createAsset(msg.assetId, msg.maxSupply, msg.faceValue, msg.maturityTimestamp);\n\nmsg.tx = tx;\nmsg.payload = { hash: tx.hash};\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "ethers",
+                "module": "ethers"
+            }
+        ],
+        "x": 440,
+        "y": 440,
+        "wires": [
+            [
+                "044fdcbdfdcd7a04",
+                "30a836f0c70cd525"
+            ]
+        ]
+    },
+    {
+        "id": "044fdcbdfdcd7a04",
+        "type": "debug",
+        "z": "a781da6f697711d2",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "30a836f0c70cd525",
+        "type": "http response",
+        "z": "a781da6f697711d2",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 770,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "c23e1cab7499043b",
+        "type": "inject",
+        "z": "a781da6f697711d2",
+        "name": "",
+        "props": [
+            {
+                "p": "timestamp",
+                "v": "",
+                "vt": "date"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 320,
+        "wires": [
+            [
+                "23c87abb19d043c5"
+            ]
+        ]
+    },
+    {
+        "id": "23c87abb19d043c5",
+        "type": "function",
+        "z": "a781da6f697711d2",
+        "name": "Current Time + 10 Minutes",
+        "func": "const start = msg.timestamp; // 2018-01-01 00:00:00\nconst end = msg.timestamp + 60 * 10; // 2018-02-10 00:00:00\n\nmsg.end = end;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 320,
+        "wires": [
+            [
+                "f0aa49d74372ee5f",
+                "57092e2536312a66"
+            ]
+        ]
+    },
+    {
+        "id": "f0aa49d74372ee5f",
+        "type": "debug",
+        "z": "a781da6f697711d2",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "905a9d8acd2ffc25",
+        "type": "http in",
+        "z": "a781da6f697711d2",
+        "name": "Get Maturity Time",
+        "url": "/initialise",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 260,
+        "wires": [
+            [
+                "23c87abb19d043c5"
+            ]
+        ]
+    },
+    {
+        "id": "57092e2536312a66",
+        "type": "http response",
+        "z": "a781da6f697711d2",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 770,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "3c4575afe9674c7d",
+        "type": "http in",
+        "z": "a781da6f697711d2",
+        "name": "Mint",
+        "url": "/mintAsset",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 210,
+        "y": 620,
+        "wires": [
+            [
+                "396467b890506b70"
+            ]
+        ]
+    },
+    {
+        "id": "91ddbb58a215cbc4",
+        "type": "inject",
+        "z": "a781da6f697711d2",
+        "name": "",
+        "props": [
+            {
+                "p": "assetId",
+                "v": "",
+                "vt": "num"
+            },
+            {
+                "p": "amounts",
+                "v": "",
+                "vt": "num"
+            },
+            {
+                "p": "recipient",
+                "v": "",
                 "vt": "str"
             }
         ],
@@ -928,100 +417,260 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 190,
-        "y": 880,
+        "x": 210,
+        "y": 680,
         "wires": [
             [
-                "a629004290bcbdfe"
+                "396467b890506b70"
             ]
         ]
     },
     {
-        "id": "59f13be41e1f7c41",
-        "type": "http in",
-        "z": "3fbb662928a42584",
-        "name": "burn",
-        "url": "/burn",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 170,
-        "y": 840,
+        "id": "396467b890506b70",
+        "type": "function",
+        "z": "a781da6f697711d2",
+        "name": "Mint Asset",
+        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst bpassKey = global.get('bpassKey');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst privateKey = global.get('privateKey');\nconst contractAddress = global.get('contract');\nconst abi = global.get('abi')\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.providers.JsonRpcProvider(`${rpcEndpoint}/${bpassKey}`);\nconst signer = new ethers.Wallet(privateKey, provider)\nconst contract = new ethers.Contract(contractAddress, abi, signer);\n\nconst tx = await contract.mint(msg.assetId, msg.amounts, msg.recipient);\n\nmsg.tx = tx;\nmsg.payload = { hash: tx.hash};\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "ethers",
+                "module": "ethers"
+            }
+        ],
+        "x": 430,
+        "y": 680,
         "wires": [
             [
-                "a629004290bcbdfe"
+                "800e2f3264dfcd5a",
+                "8973a39a370872a0"
             ]
         ]
     },
     {
-        "id": "f986dd3186139a0a",
-        "type": "http response",
-        "z": "3fbb662928a42584",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 670,
-        "y": 840,
+        "id": "800e2f3264dfcd5a",
+        "type": "debug",
+        "z": "a781da6f697711d2",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 680,
         "wires": []
     },
     {
-        "id": "7ba282c272e7190c",
-        "type": "catch",
-        "z": "3fbb662928a42584",
+        "id": "8973a39a370872a0",
+        "type": "http response",
+        "z": "a781da6f697711d2",
         "name": "",
-        "scope": null,
-        "uncaught": false,
+        "statusCode": "200",
+        "headers": {},
+        "x": 770,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "736e61d2a897367f",
+        "type": "http in",
+        "z": "a781da6f697711d2",
+        "name": "View Balance",
+        "url": "/viewBalance",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
         "x": 180,
-        "y": 940,
+        "y": 740,
         "wires": [
             [
-                "53c571ea7e8a0332"
+                "79c13e182da793bf"
             ]
         ]
     },
     {
-        "id": "53c571ea7e8a0332",
-        "type": "change",
-        "z": "3fbb662928a42584",
+        "id": "4a5021a501f7fa28",
+        "type": "inject",
+        "z": "a781da6f697711d2",
         "name": "",
-        "rules": [
+        "props": [
             {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Bad Request",
-                "tot": "str"
+                "p": "address",
+                "v": "",
+                "vt": "str"
             },
             {
-                "t": "set",
-                "p": "statusCode",
-                "pt": "msg",
-                "to": "500",
-                "tot": "str"
+                "p": "id",
+                "v": "",
+                "vt": "num"
             }
         ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 430,
-        "y": 940,
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 800,
         "wires": [
             [
-                "38166256843d77b1"
+                "79c13e182da793bf"
             ]
         ]
     },
     {
-        "id": "38166256843d77b1",
+        "id": "79c13e182da793bf",
+        "type": "function",
+        "z": "a781da6f697711d2",
+        "name": "View Balance",
+        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst bpassKey = global.get('bpassKey');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst privateKey = global.get('privateKey');\nconst contractAddress = global.get('contract');\nconst abi = global.get('abi')\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.providers.JsonRpcProvider(`${rpcEndpoint}/${bpassKey}`);\nconst signer = new ethers.Wallet(privateKey, provider)\nconst contract = new ethers.Contract(contractAddress, abi, signer);\n\nconst tx = await contract.balanceOf(msg.address, msg.id);\n\nmsg.tx = tx;\nmsg.payload = { hash: tx.hash};\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "ethers",
+                "module": "ethers"
+            }
+        ],
+        "x": 440,
+        "y": 800,
+        "wires": [
+            [
+                "2a6a5fc7f077b330",
+                "4d5d69f4484e672a"
+            ]
+        ]
+    },
+    {
+        "id": "2a6a5fc7f077b330",
+        "type": "debug",
+        "z": "a781da6f697711d2",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "4d5d69f4484e672a",
         "type": "http response",
-        "z": "3fbb662928a42584",
+        "z": "a781da6f697711d2",
         "name": "",
-        "statusCode": "",
+        "statusCode": "200",
         "headers": {},
-        "x": 670,
-        "y": 940,
+        "x": 770,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "d4cda817f22bae82",
+        "type": "http in",
+        "z": "a781da6f697711d2",
+        "name": "View Asset",
+        "url": "/viewAsset",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 500,
+        "wires": [
+            [
+                "2da7906165d6d5a3"
+            ]
+        ]
+    },
+    {
+        "id": "95939c685c83f962",
+        "type": "inject",
+        "z": "a781da6f697711d2",
+        "name": "",
+        "props": [
+            {
+                "p": "assetId",
+                "v": "",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 560,
+        "wires": [
+            [
+                "2da7906165d6d5a3"
+            ]
+        ]
+    },
+    {
+        "id": "2da7906165d6d5a3",
+        "type": "function",
+        "z": "a781da6f697711d2",
+        "name": "View Asset",
+        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst bpassKey = global.get('bpassKey');\nconst rpcEndpoint = global.get('rpcEndpoint');\nconst privateKey = global.get('privateKey');\nconst contractAddress = global.get('contract');\nconst abi = global.get('abi')\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.providers.JsonRpcProvider(`${rpcEndpoint}/${bpassKey}`);\nconst signer = new ethers.Wallet(privateKey, provider)\nconst contract = new ethers.Contract(contractAddress, abi, signer);\n\nconst tx = await contract.assetToDetails(msg.assetId);\n\nmsg.tx = tx;\nmsg.payload = { hash: tx.hash};\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "ethers",
+                "module": "ethers"
+            }
+        ],
+        "x": 430,
+        "y": 560,
+        "wires": [
+            [
+                "9844d4ddf4b294ef",
+                "a31a26d871259c19"
+            ]
+        ]
+    },
+    {
+        "id": "9844d4ddf4b294ef",
+        "type": "debug",
+        "z": "a781da6f697711d2",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "a31a26d871259c19",
+        "type": "http response",
+        "z": "a781da6f697711d2",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 770,
+        "y": 500,
         "wires": []
     }
 ]
