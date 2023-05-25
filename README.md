@@ -1,4 +1,4 @@
-# Hyperledger Besu Asset Tokenisation on SettleMint
+# polygon-asset-tokenisation
 
 ## Context
 
@@ -8,7 +8,7 @@ Hyperledger Besu Asset Tokenisation powered by SettleMint
 
 ## Getting Started
 
-1. Create an account on SettleMint [here](https://console.settlemint.com/)
+1. Register your interest [here](https://hubs.li/Q01Q-Klt0) or Create an account on SettleMint [here](https://console.settlemint.com/)
 2. Create an Organisation (e.g. Your_Name_Organisation)
 3. Create an Application (e.g. Your_Name_Application)
 4. Click on Blockchain networks and add a `Hyperledger Besu` network and a node (e.g. Your_Name_Network, Your_Name_Node). Note: Choose the `shared` and `small` for the deployment plan
@@ -20,8 +20,14 @@ Hyperledger Besu Asset Tokenisation powered by SettleMint
 
 1. In the SettleMint BPass Platform, head over to `Smart contract sets`
 2. Click on your deployed smart contract set and go to the IDE tab and click `view in fullscreen mode`
-3. Copy the template `AssetTokenisation.sol` found in `./Smart-Contracts` and paste it in the IDE's folder `./contracts`. Make sure your file name is the same as the contract name, e.g. `AssetTokenisation.sol` == `contract AssetTokenisation ...`
-4. In the folder `./deploy`, open the file named `00_deploy_example.ts` and in line 13, change the name of the contract depending on your file name
+3. In the terminal of the Internal IDE, clone the repo
+
+```bash
+git clone https://github.com/settlemint/buidl-asset-tokenisation.git
+```
+
+4. Copy the template `AssetTokenisation.sol` found in `./Smart-Contracts` in the cloned repo and paste it in the IDE's folder `./contracts`. Make sure your file name is the same as the contract name, e.g. `AssetTokenisation.sol` == `contract AssetTokenisation ...`
+5. In the folder `./deploy`, open the file named `00_deploy_example.ts` and in line 13, change the name of the contract depending on your file name
 
 ```javascript
   await deploy('AssetTokenisation', {
@@ -37,17 +43,17 @@ Hyperledger Besu Asset Tokenisation powered by SettleMint
 pnpm run smartcontract:deploy:reset
 ```
 
-6. Note down your deployed smart contract address (notes/stickies/etc)
+6. You may create a `notes.txt` file or open up your (notes/stickies/word) to note down your deployed smart contract address
 
-8. Open the `abi` folder, go to `AssetTokenisation.json` and copy the json contents
+7. Open the `abi` folder, go to `AssetTokenisation.json` and copy the json contents
 
-8. Note down your json contents (notes/stickies/etc)
+8. Note down your json contents (txt/notes/stickies)
 
 ### Set up your SettleMint API key
 
 1. In the SettleMint BPass Platform, click on your profile icon at the top right at click on `API keys`
 2. Check all the boxes and generate your API key
-3. Note down your API key (notes/stickies/etc)
+3. Note down your API key (txt/notes/stickies)
 
 ### Upload your Image to IPFS
 
@@ -56,12 +62,12 @@ pnpm run smartcontract:deploy:reset
 3. Choose an image that represents your asset and upload your image
 4. Click on the ellipsis at the far right and click `Set pinning` to pin your image
 5. Click on the ellipsis at the far right again and click `Share link` to copy the link to your image
-6. Note down your image uri
+6. Note down your image uri (txt/notes/stickies)
 
 ### Find your JSON-RPC endpoint
 
 1. In the SettleMint BPass Platform, click on `Blockchain nodes`, click on your deployed node and click on `Connect`
-2. Note down your `JSON-RPC` endpoint
+2. Note down your `JSON-RPC` endpoint (txt/notes/stickies)
 
 ### BUIDL session
 
@@ -144,6 +150,6 @@ msg.recipient = e.g. recipient address
 
 ## Congratuations! You have minted your first asset on an Asset Tokenisaton Contract through SettleMint! 
 
-CTA 
+We encourage you to continue building your project after this BUIDL session!
 
 ---
