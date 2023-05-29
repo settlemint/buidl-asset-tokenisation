@@ -1,8 +1,8 @@
-# polygon-asset-tokenisation
+# hyperledger-besu-asset-tokenization
 
 ## Context
 
-Hyperledger Besu Asset Tokenisation powered by SettleMint
+Hyperledger Besu Asset Tokenization powered by SettleMint
 
 ---
 
@@ -14,7 +14,7 @@ Hyperledger Besu Asset Tokenisation powered by SettleMint
 4. Click on Blockchain networks and add a `Hyperledger Besu` network and a node (e.g. Your_Name_Network, Your_Name_Node). Note: Choose the `shared` and `small` for the deployment plan
 5. Click on Storage and add a `IPFS (decentralised)` storage. Note: Choose the `shared` and `small` for the deployment plan
 6. Click on Private keys and add a `Accessible EC DSA P256` key
-7. Click on Smart Contracts sets and add a `Empty` template (e.g. Your_Name_Asset_Tokenisation). Note: Choose the `shared` and `small` for the deployment plan
+7. Click on Smart Contracts sets and add a `Empty` template (e.g. Your_Name_Asset_Tokenization). Note: Choose the `shared` and `small` for the deployment plan
 
 ### Setting up and Deployment of your Smart Contract
 
@@ -26,18 +26,18 @@ Hyperledger Besu Asset Tokenisation powered by SettleMint
 git clone https://github.com/settlemint/buidl-asset-tokenisation.git
 ```
 
-4. Copy the template `AssetTokenisation.sol` found in `./Smart-Contracts` in the cloned repo and paste it in the IDE's folder `./contracts`. Make sure your file name is the same as the contract name, e.g. `AssetTokenisation.sol` == `contract AssetTokenisation ...`
+4. Copy the template `AssetTokenization.sol` found in `./Smart-Contracts` in the cloned repo and paste it in the IDE's folder `./contracts`. Make sure your file name is the same as the contract name, e.g. `AssetTokenization.sol` == `contract AssetTokezisation ...`
 5. In the folder `./deploy`, open the file named `00_deploy_example.ts` and in line 13, change the name of the contract depending on your file name
 
 ```javascript
-  await deploy('AssetTokenisation', {
+  await deploy('AssetTokenization', {
     from: deployer,
     args: [],
     log: true,
   });
 ```
 
-5. Deploy your Asset Tokenisation smart contract!
+5. Deploy your Asset Tokenization smart contract!
 
 ```bash
 pnpm run smartcontract:deploy:reset
@@ -45,7 +45,7 @@ pnpm run smartcontract:deploy:reset
 
 6. You may create a `notes.txt` file or open up your (notes/stickies/word) to note down your deployed smart contract address
 
-7. Open the `abi` folder, go to `AssetTokenisation.json` and copy the json contents
+7. Open the `abi` folder, go to `AssetTokenization.json` and copy the json contents
 
 8. Note down your json contents (txt/notes/stickies)
 
@@ -75,7 +75,7 @@ pnpm run smartcontract:deploy:reset
 2. In the SettleMint BPass Platform, click on `Integration tools` and deploy an `Integration Studio` tool
 3. Click on your deployed `Integration Studio`, click on `Interface` and click `view in fullscreen mode`
 4. At the top right dropdown box, click on `Import` and import the `flows.json` found in the `Integration-Studio` directory here in a `new flow`
-5. Once imported, click on the `Asset Tokenisation` tab and click `Deploy` at the top right
+5. Once imported, click on the `Asset Tokenization` tab and click `Deploy` at the top right
 
 #### 1. Initialise your global variables
 
@@ -127,7 +127,7 @@ msg.maturityTime = <end value>
 #### 4. View your created asset
 
 1. Click on the blue button next to the `inject` module, next to the `View Asset` module
-2. You can view the output at the debug window on the right side by clicking on the bug icon. 
+2. You can view the output at the debug window on the right side by clicking on the bug icon.
 
 #### 5. Mint your created asset
 
@@ -148,7 +148,7 @@ msg.recipient = e.g. recipient address
 1. Click on the blue button next to the `inject` module, next to the `View Balance` module
 2. You can view the output at the debug window on the right side by clicking on the bug icon.
 
-## Congratuations! You have minted your first asset on an Asset Tokenisaton Contract through SettleMint! 
+## Congratuations! You have minted your first asset on an Asset Tokenisaton Contract through SettleMint
 
 We encourage you to continue building your project after this BUIDL session!
 
