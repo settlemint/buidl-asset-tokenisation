@@ -13,9 +13,10 @@ Hyperledger Besu Asset Tokenization powered by SettleMint
 3. Create an Application (e.g. Your_Name_Application)
 4. Click on Blockchain networks and add a `Hyperledger Besu` network and a node (e.g. Your_Name_Network, Your_Name_Node). Note: Choose the `shared` and `small` for the deployment plan
 5. Click on Storage and add a `IPFS (decentralised)` storage. Note: Choose the `shared` and `small` for the deployment plan
-6. Click on Private keys and add a `Accessible EC DSA P256` key
-7. Click on Smart Contracts sets and add a `Empty` template (e.g. Your_Name_Asset_Tokenization). Note: Choose the `shared` and `small` for the deployment plan
-8. Click on Insights and add a `Blockscout` insights template and choose your deployed besu node. Note: Choose the `shared` and `small` for the deployment plan
+6. Click on Integration Tools and add a `Integration Studio` tool. Note: Choose the `shared` and `small` for the deployment plan
+7. Click on Insights and add a `Blockscout` insights template and choose your deployed besu node. Note: Choose the `shared` and `small` for the deployment plan
+8. Click on Private keys and add a `Accessible EC DSA P256` key
+9. Click on Smart Contracts sets and add a `Empty` template (e.g. Your_Name_Asset_Tokenization). Note: Choose the `shared` and `small` for the deployment plan
 
 ### Setting up and Deployment of your Smart Contract
 
