@@ -66,10 +66,15 @@ pnpm run smartcontract:deploy:reset
 5. Click on the ellipsis at the far right again and click `Share link` to copy the link to your image
 6. Note down your image uri (txt/notes/stickies)
 
-### Find your JSON-RPC endpoint
+### Note down your JSON-RPC endpoint
 
 1. In the SettleMint BPass Platform, click on `Blockchain nodes`, click on your deployed node and click on `Connect`
 2. Note down your `JSON-RPC` endpoint (txt/notes/stickies)
+
+### Note down your private Key
+
+1. In the SettleMint BPass Platform, click on `Private keys`
+2. Note down your `Private Key` and `Address` (txt/notes/stickies)
 
 ### BUIDL session
 
